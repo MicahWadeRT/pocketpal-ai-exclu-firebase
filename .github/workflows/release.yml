@@ -140,7 +140,6 @@ jobs:
       - name: Create .env file
         run: |
           cat > .env << 'EOL'
-          FIREBASE_FUNCTIONS_URL=${{ vars.FIREBASE_FUNCTIONS_URL }}
 
           # PalsHub/Supabase Configuration
           SUPABASE_URL=${{ vars.SUPABASE_URL }}
@@ -312,7 +311,6 @@ jobs:
       - name: Create .env file
         run: |
           cat > .env << 'EOL'
-          FIREBASE_FUNCTIONS_URL=${{ vars.FIREBASE_FUNCTIONS_URL }}
 
           # PalsHub/Supabase Configuration
           SUPABASE_URL=${{ vars.SUPABASE_URL }}

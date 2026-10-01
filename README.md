@@ -202,6 +202,11 @@ yarn android                  # build + run on Android emulator
 
 Core on-device chat works without any backend keys; only PalsHub/auth features need additional configuration.
 
+This repository also builds without Firebase. Leave `API_BASE_URL` empty in
+`.env` to disable the optional benchmark and feedback backend, then run the
+same Android or iOS commands above. Firebase App Check is not included in the
+community build.
+
 > **Native-change rule:** if you change `package.json`, a native module, `ios/`, `android/`, the Podfile, or `build.gradle`, re-run `pod install` and rebuild both platforms — a JS reload won't pick up native changes.
 
 ### Quality gates

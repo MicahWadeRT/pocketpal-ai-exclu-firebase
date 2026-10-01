@@ -57,46 +57,9 @@ jobs:
       - name: Set up the Hexagon SDK
         uses: ./.github/actions/setup-hexagon-sdk
 
-      - name: Create dummy google-services.json for CI
-        run: |
-          cat > android/app/google-services.json << 'EOL'
-          {
-            "project_info": {
-              "project_number": "000000000000",
-              "project_id": "dummy-project-for-ci",
-              "storage_bucket": "dummy-project-for-ci.appspot.com"
-            },
-            "client": [
-              {
-                "client_info": {
-                  "mobilesdk_app_id": "1:000000000000:android:0000000000000000",
-                  "android_client_info": {
-                    "package_name": "com.pocketpalai"
-                  }
-                },
-                "api_key": [{
-                  "current_key": "dummy-api-key-for-ci-builds"
-                }]
-              },
-              {
-                "client_info": {
-                  "mobilesdk_app_id": "1:000000000000:android:1111111111111111",
-                  "android_client_info": {
-                    "package_name": "com.pocketpalai.e2e"
-                  }
-                },
-                "api_key": [{
-                  "current_key": "dummy-api-key-for-ci-builds"
-                }]
-              }
-            ]
-          }
-          EOL
-
       - name: Create dummy .env file for CI
         run: |
           cat > .env << 'EOL'
-          FIREBASE_FUNCTIONS_URL=https://dummy-firebase-url.com
           SUPABASE_URL=https://dummy-supabase-url.supabase.co
           SUPABASE_ANON_KEY=dummy-anon-key-for-ci-builds
           PALSHUB_API_BASE_URL=https://dummy-palshub-api.com
